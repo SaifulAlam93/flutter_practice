@@ -5,7 +5,7 @@ import 'package:my_app/page2.dart';
 import 'package:my_app/page3.dart';
 
 void main() {
-  runApp(MyFirstStateFullW());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +22,36 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Hero Icon
+class PracticeN11 extends StatelessWidget {
+  const PracticeN11({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: CircleAvatar(
+        radius: 50,
+        child: GestureDetector(
+          child: Hero(
+            tag: "Add",
+            child: Icon(
+              Icons.work_off,
+            ),
+          ),
+          onTap: () {},
+        ),
+      ),
+    ));
+  }
+}
+
+///First stf weget you need to call it from main method
+
+///void main() {
+// runApp(MyFirstStateFullW());
+// }
+
 class MyFirstStateFullW extends StatefulWidget {
   const MyFirstStateFullW({Key? key}) : super(key: key);
 
@@ -31,11 +61,19 @@ class MyFirstStateFullW extends StatefulWidget {
 
 class _MyFirstStateFullWState extends State<MyFirstStateFullW> {
   PageController _controller = PageController(initialPage: 0);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
           body: PageView(
+        scrollDirection: Axis.vertical,
         controller: _controller,
         children: [
           Page1(),
@@ -43,19 +81,6 @@ class _MyFirstStateFullWState extends State<MyFirstStateFullW> {
           Page3(),
         ],
       )),
-    );
-  }
-}
-
-class PracticeN11 extends StatelessWidget {
-  const PracticeN11({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [],
-      ),
     );
   }
 }
