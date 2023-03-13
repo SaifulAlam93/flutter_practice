@@ -5,8 +5,10 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.deepPurpleAccent,
+    return Scaffold(
+      body: Container(
+        color: Colors.deepPurpleAccent,
+      ),
     );
   }
 }

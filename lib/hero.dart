@@ -13,7 +13,7 @@ class HeroTest extends StatelessWidget {
           child: Hero(
             tag: "Add",
             child: Icon(
-              Icons.accessibility_new_sharp,
+              Icons.work_off,
               size: 250,
             ),
           ),

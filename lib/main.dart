@@ -17,7 +17,80 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.cyan),
       debugShowCheckedModeBanner: false,
-      home: PracticeN11(),
+      home: pracN12(),
+    );
+  }
+}
+
+class pracN12 extends StatelessWidget {
+  const pracN12({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(tabs: [
+              Tab(
+                icon: Icon(Icons.yard),
+              ),
+              Tab(
+                icon: Icon(Icons.yard),
+              )
+            ]),
+          ),
+          body: TabBarView(
+            children: [
+              Page1(),
+              Page2(),
+            ],
+          )),
+    );
+  }
+}
+
+//BottomNavigationBar  With State full
+class PracN12 extends StatefulWidget {
+  const PracN12({super.key});
+
+  @override
+  State<PracN12> createState() => _nameState();
+}
+
+class _nameState extends State<PracN12> {
+  var _currentState = 0;
+  final pages = [
+    Page1(),
+    Page2(),
+    Page3(),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentState,
+        items: [
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromARGB(87, 204, 175, 44),
+              label: "Message",
+              icon: Icon(Icons.account_box_outlined)),
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromARGB(87, 204, 175, 44),
+              label: "Call",
+              icon: Icon(Icons.call)),
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromARGB(87, 204, 175, 44),
+              label: "Pan Tool",
+              icon: Icon(Icons.pan_tool)),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentState = index;
+          });
+        },
+      ),
+      body: pages[_currentState],
     );
   }
 }
