@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.cyan),
       debugShowCheckedModeBanner: false,
-      home: pracN12(),
+      home: PracN12(),
     );
   }
 }
@@ -46,6 +46,27 @@ class pracN12 extends StatelessWidget {
               Page2(),
             ],
           )),
+    );
+  }
+}
+
+class PracticeN07 extends StatefulWidget {
+  const PracticeN07({Key? key}) : super(key: key);
+
+  @override
+  State<PracticeN07> createState() => _PracticeN07State();
+}
+
+class _PracticeN07State extends State<PracticeN07> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+          label: "Lable 1",
+          icon: Icon(Icons.width_wide_outlined),
+        ),
+      ]),
     );
   }
 }

@@ -6,8 +6,35 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.deepPurpleAccent,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.count(
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: [
+            Container(
+              color: Colors.amberAccent,
+              height: 250,
+              width: 250,
+            ),
+            Container(
+              color: Colors.cyan,
+              height: 250,
+              width: 250,
+            ),
+            Container(
+              color: Colors.teal,
+              height: 250,
+              width: 250,
+            ),
+            Container(
+              color: Colors.amberAccent,
+              height: 250,
+              width: 250,
+            ),
+          ],
+        ),
       ),
     );
   }
